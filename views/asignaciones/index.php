@@ -1,14 +1,14 @@
 <h1 class="text-center">Formulario de puestos</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioAsignaciones">
-        <input type="hidden" name="puesto_id" id="puesto_id">
+        <input type="hidden" name="asignacion_id" id="asignacion_id">
         <div class="row mb-3">
                 <div class="col">
                     <label for="empleado_id">Empleado</label>
                     <select name="empleado_id" id="empleado_id" class="form-control">
                         <option value="">SELECCIONE...</option>
-                        <?php foreach ($areas as $key => $area) : ?>
-                            <option value="<?= $area['AREA_ID'] ?>"><?= $area['AREA_NOMBRE'] ?></option>
+                        <?php foreach ($empleados as $key => $empleado) : ?>
+                            <option value="<?= $empleado['EMPLEADO_ID'] ?>"><?= $area['EMPLEADO_NOMBRE'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
@@ -30,7 +30,7 @@
                     <select name="puesto_id" id="puesto_id" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($puestos as $key => $puesto) : ?>
-                            <option value="<?= $puesto['PUE_ID'] ?>"><?= $puesto['PUE_DESCRIPCION'] ?></option>
+                            <option value="<?= $puesto['PUESTO_ID'] ?>"><?= $STOsto['PUESTO_DESCRIPCION'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
@@ -58,8 +58,9 @@
             <thead class="table-dark">
                 <tr>
                     <th>NO. </th>
-                    <th>DESCRIPCION</th>
-                    <th>SUELDO</th>
+                    <th>EMPLEADO</th>
+                    <th>AREA</th>
+                    <th>PUESTO</th>
                     <th>MODIFICAR</th>
                     <th>ELIMINAR</th>
                 </tr>
