@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { validarFormulario, Toast, confirmacion} from "../funciones";
 
 const formulario = document.querySelector('form')
-const tablaPuestos = document.getElementById('tablaPuestos');
+const tablaAsignaciones = document.getElementById('tablaAsignaciones');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
 const btnGuardar = document.getElementById('btnGuardar');
@@ -17,7 +17,7 @@ btnCancelar.parentElement.style.display = 'none'
 
 const guardar = async (evento) => {
     evento.preventDefault();
-    if(!validarFormulario(formulario, ['puesto_id'])){
+    if(!validarFormulario(formulario, ['asignacion_id'])){
         Toast.fire({
             icon: 'info',
             text: 'Debe llenar todos los datos'
@@ -26,8 +26,8 @@ const guardar = async (evento) => {
     }
 
     const body = new FormData(formulario)
-    body.delete('puesto_id')
-    const url = '/final_IS2_bolvito/API/puestos/guardar';
+    body.delete('asignacion_id')
+    const url = '/final_IS2_bolvito/API/asignaciones/guardar';
     const config = {
         method : 'POST',
         // body: otroNombre
@@ -71,9 +71,9 @@ const guardar = async (evento) => {
 
 const buscar = async () => {
 
-    let puesto_descripcion = formulario.puesto_descripcion.value;
-    let puesto_sueldo = formulario.puesto_sueldo.value;
-    const url = `/final_IS2_bolvito/API/puestos/buscar?puesto_descripcion=${puesto_descripcion}&puesto_sueldo=${puesto_sueldo}`;
+    let empleado_id = formulario.empleado_id.value;
+    let puesto_id = formulario.puesto_id.value;
+    const url = `/final_IS2_bolvito/API/asignaciones/buscar?empleado_id=${empleado_id}&puesto_id=${puesto_id}`;
     const config = {
         method : 'GET'
     }
@@ -82,7 +82,7 @@ const buscar = async () => {
         const respuesta = await fetch(url, config)
         const data = await respuesta.json();
         
-        tablaPuestos.tBodies[0].innerHTML = ''
+        tablaAsignaciones.tBodies[0].innerHTML = ''
         const fragment = document.createDocumentFragment();
         console.log(data);
         // return;
@@ -105,12 +105,12 @@ const buscar = async () => {
                 buttonModificar.textContent = 'Modificar'
                 buttonEliminar.textContent = 'Eliminar'
 
-                buttonModificar.addEventListener('click', () => colocarDatos(puesto))
-                buttonEliminar.addEventListener('click', () => eliminar(puesto.puesto_id))
+                buttonModificar.addEventListener('click', () => colocarDatos(asignacion))
+                buttonEliminar.addEventListener('click', () => eliminar(asignacion.asignacion_id))
 
                 td1.innerText = contador;
-                td2.innerText = puesto.puesto_descripcion
-                td3.innerText = puesto.puesto_sueldo
+                td2.innerText = asignacion.empleado_id
+                td3.innerText = asignacion.puesto_id
                 
                 
                 // ESTRUCTURANDO DOM
@@ -135,16 +135,16 @@ const buscar = async () => {
             fragment.appendChild(tr);
         }
 
-        tablaPuestos.tBodies[0].appendChild(fragment)
+        tablaAsignaciones.tBodies[0].appendChild(fragment)
     } catch (error) {
         console.log(error);
     }
 }
 
 const colocarDatos = (datos) => {
-    formulario.puesto_descripcion.value = datos.puesto_descripcion
-    formulario.puesto_sueldo.value = datos.puesto_sueldo
+    formulario.empleado_id.value = datos.empleado_id
     formulario.puesto_id.value = datos.puesto_id
+    formulario.asignacion_id.value = datos.asignacion_id
 
     btnGuardar.disabled = true
     btnGuardar.parentElement.style.display = 'none'
@@ -178,7 +178,7 @@ const modificar = async () => {
     }
 
     const body = new FormData(formulario)
-    const url = '/final_IS2_bolvito/API/puestos/modificar';
+    const url = '/final_IS2_bolvito/API/asignaciones/modificar';
     const config = {
         method : 'POST',
         body
@@ -221,8 +221,8 @@ const modificar = async () => {
 const eliminar = async (id) => {
     if(await confirmacion('warning','¿Desea eliminar este registro?')){
         const body = new FormData()
-        body.append('puesto_id', id)
-        const url = '/final_IS2_bolvito/API/puestos/eliminar';
+        body.append('asignacion_id', id)
+        const url = '/final_IS2_bolvito/API/asignaciones/eliminar';
         const config = {
             method : 'POST',
             body
