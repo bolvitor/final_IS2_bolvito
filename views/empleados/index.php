@@ -24,6 +24,7 @@
                 <div class="col">
                     <label for="empleado_sexo">Género del Empleado</label>
                     <select name="empleado_sexo" id="empleado_sexo" class="form-control">
+                        <option value="">Todos</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                     </select>

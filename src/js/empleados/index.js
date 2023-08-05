@@ -73,8 +73,10 @@ const buscar = async () => {
 
     let empleado_nombre = formulario.empleado_nombre.value;
     let empleado_dpi = formulario.empleado_dpi.value;
+    let empleado_edad = formulario.empleado_edad.value;
+    let empleado_sexo = formulario.empleado_sexo.value;
     
-    const url = `/final_IS2_bolvito/API/empleados/buscar?empleado_nombre=${empleado_nombre}&empleado_dpi=${empleado_dpi}`;
+    const url = `/final_IS2_bolvito/API/empleados/buscar?empleado_nombre=${empleado_nombre}&empleado_dpi=${empleado_dpi}&empleado_edad=${empleado_edad}&empleado_sexo=${empleado_sexo}`;
     const config = {
         method : 'GET'
     }
@@ -137,7 +139,7 @@ const buscar = async () => {
             const tr = document.createElement('tr');
             const td = document.createElement('td')
             td.innerText = 'No existen registros'
-            td.colSpan = 5
+            td.colSpan = 7
             tr.appendChild(td)
             fragment.appendChild(tr);
         }
@@ -151,6 +153,8 @@ const buscar = async () => {
 const colocarDatos = (datos) => {
     formulario.empleado_nombre.value = datos.empleado_nombre
     formulario.empleado_dpi.value = datos.empleado_dpi
+    formulario.empleado_edad.value = datos.empleado_edad
+    formulario.empleado_sexo.value = datos.empleado_sexo
     formulario.empleado_id.value = datos.empleado_id
 
     btnGuardar.disabled = true
