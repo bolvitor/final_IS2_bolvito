@@ -105,7 +105,8 @@ class AreaController{
         
         $sql = "SELECT * FROM areas where area_situacion = 1 ";
         if($area_nombre != '') {
-            $sql.= " and area_nombre like '%$area_nombre%' ";
+            $area_nombre = strtolower($area_nombre);
+            $sql.= " and LOWER(area_nombre) like '%$area_nombre%' ";
         }
         try {
             

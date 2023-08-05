@@ -106,7 +106,8 @@ class PuestoController{
 
         $sql = "SELECT * FROM puestos where puesto_situacion = 1 ";
         if($puesto_descripcion != '') {
-            $sql.= " and puesto_descripcion like '%$puesto_descripcion%' ";
+            $puesto_descripcion = strtolower($puesto_descripcion);
+            $sql.= " and LOWER(puesto_descripcion) like '%$puesto_descripcion%' ";
         }
         if($puesto_sueldo != '') {
             $sql.= " and puesto_sueldo = $puesto_sueldo ";
