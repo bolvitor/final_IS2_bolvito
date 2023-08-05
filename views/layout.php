@@ -42,6 +42,9 @@
                             <li>
                                 <a class="dropdown-item nav-link text-white " href="/final_IS2_bolvito/empleados"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Empleados</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_bolvito/asignaciones"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Asignacion_Empleados</a>
+                            </li>
                         
                     
                         
