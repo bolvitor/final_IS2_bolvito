@@ -37,7 +37,7 @@
                                 <a class="dropdown-item nav-link text-white " href="/final_IS2_bolvito/puestos"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Puestos</a>
                             </li>
                             <li>
-                                <a class="dropdown-item nav-link text-white " href="/final_IS2_bolvito/areas"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Puestos</a>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_bolvito/areas"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Areas</a>
                             </li>
                         
                     
