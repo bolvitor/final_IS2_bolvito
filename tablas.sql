@@ -23,7 +23,6 @@ CREATE TABLE areas (
     PRIMARY KEY(area_id)
 );
 
-
 CREATE TABLE asignacion_Empleado (
     asignacion_id SERIAL NOT NULL,
     empleado_id INTEGER NOT NULL,
