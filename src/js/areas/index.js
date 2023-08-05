@@ -118,7 +118,7 @@ const buscar = async () => {
                 tr.appendChild(td2)
                 tr.appendChild(td3)
                 tr.appendChild(td4)
-                tr.appendChild(td5)
+            
 
                 fragment.appendChild(tr);
 

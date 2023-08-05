@@ -101,18 +101,30 @@ class EmpleadoController{
 
     public static function buscarAPI(){
         // $puestos = Puesto::all();
-        $empleado_nombre = $_GET['empleado_nombre'];
-        $empleado_dpi = $_GET['empleado_dpi'];
+        $empleado_nombre = $_GET['empleado_nombre'] ?? '';
+        $empleado_dpi = $_GET['empleado_dpi'] ?? '';
+        $empleado_edad = $_GET['empleado_edad'] ?? '';
+        $empleado_sexo = $_GET['empleado_sexo'] ?? '';
+
        
-        $sql = "SELECT * FROM empleados where empleado_situacion = 1 ";
+        $sql = "SELECT * FROM empleados WHERE empleado_situacion = 1 ";
         if($empleado_nombre != '') {
             $empleado_nombre = strtolower($empleado_nombre);
-            $sql.= " and LOWER(empleado_nombre) like '%$empleado_nombre%' ";
+            $sql.= " AND LOWER(empleado_nombre) LIKE '%$empleado_nombre%' ";
         }
         if($empleado_dpi != '') {
             $empleado_dpi = strtolower($empleado_dpi);
-            $sql.= " and LOWER(empleado_dpi) = $empleado_dpi ";
+            $sql.= " AND LOWER(empleado_dpi) = '$empleado_dpi' ";
         }
+        if($empleado_edad != '') {
+            $empleado_edad = strtolower($empleado_edad);
+            $sql.= " AND LOWER(empleado_edad) = '$empleado_edad' ";
+        }
+        if($empleado_sexo != '') {
+            $empleado_sexo = strtolower($empleado_sexo);
+            $sql.= " AND LOWER(empleado_sexo) = '$empleado_sexo' ";
+        }
+        
         try {
             
             $empleados = Empleado::fetchArray($sql);

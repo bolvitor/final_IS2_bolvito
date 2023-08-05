@@ -2,9 +2,9 @@
 
 namespace Model;
 
-class puesto extends ActiveRecord{
-    public static $tabla = 'puestos';
-    public static $columnasDB = ['empleado_nombre', 'empleado_dpi', 'empleado_edad', 'empleado_sexo', 'empleado_id_area', 'empleado_situacion'];
+class empleado extends ActiveRecord{
+    public static $tabla = 'empleados';
+    public static $columnasDB = ['empleado_nombre', 'empleado_dpi', 'empleado_edad', 'empleado_sexo', 'empleado_situacion'];
     public static $idTabla = 'empleado_id';
 
     public $empleado_id;
@@ -12,7 +12,6 @@ class puesto extends ActiveRecord{
     public $empleado_dpi;
     public $empleado_edad;
     public $empleado_sexo;
-    public $empleado_id_area;
     public $empleado_situacion;
 
     public function __construct($args =[])
@@ -22,7 +21,6 @@ class puesto extends ActiveRecord{
         $this->empleado_dpi = $args['empleado_dpi'] ?? '';
         $this->empleado_edad = $args['empleado_edad'] ?? '';
         $this->empleado_sexo = $args['empleado_sexo'] ?? '';
-        $this->empleado_id_area = $args['empleado_id_area'] ?? '';
         $this->empleado_situacion = $args['empleado_situacion'] ?? '1';
     }
 

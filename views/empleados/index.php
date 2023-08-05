@@ -17,7 +17,7 @@
             <div class="row mb-3">
                 <div class="col">
                     <label for="empleado_edad">Edad</label>
-                    <input type="date" name="empleado_edad" id="empleado_edad" class="form-control">
+                    <input type="number" name="empleado_edad" id="empleado_edad" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
@@ -29,16 +29,10 @@
                     </select>
                 </div>
             </div>
+            
             <div class="row mb-3">
-                <div class="col">
-                    <label for="empleado_id_area">Area</label>
-                    <select name="empleado_id_area" id="empleado_id_area" class="form-control">
-                        <option value="">SELECCIONE...</option>
-                        <?php foreach ($areas as $key => $area) : ?>
-                            <option value="<?= $area['AREA_ID'] ?>"><?= $area['AREA_NOMBRE'] ?></option>
-                        <?php endforeach ?>
-                    </select>
-                </div>
+            <div class="col">
+                <button type="submit" form="formularioEmpleado" id="btnGuardar" data-saludo= "hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
             </div>
             <div class="col">
                 <button type="button" id="btnModificar" class="btn btn-warning w-100">Modificar</button>
@@ -55,7 +49,7 @@
 <div class="row justify-content-center" id="divTabla">
     <div class="col-lg-8">
         <h2>Listado de puestos</h2>
-        <table class="table table-bordered table-hover" id="tablaPuestos">
+        <table class="table table-bordered table-hover" id="tablaEmpleados">
             <thead class="table-dark">
                 <tr>
                     <th>NO. </th>
@@ -63,8 +57,6 @@
                     <th>DPI </th>
                     <th>EDAD </th>
                     <th>SEXO </th>
-                    <th>AREA</th>
-                    <th>SUELDO</th>
                     <th>MODIFICAR</th>
                     <th>ELIMINAR</th>
                 </tr>
@@ -74,4 +66,4 @@
         </table>
     </div>
 </div>
-<script src="<?= asset('./build/js/puestos/index.js')  ?>"></script>
+<script src="<?= asset('./build/js/empleados/index.js')  ?>"></script>
