@@ -6,6 +6,7 @@ use MVC\Router;
 use Controllers\AppController;
 use Controllers\PuestoController;
 use Controllers\AreaController;
+use Controllers\EmpleadoController;
 
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);
@@ -23,6 +24,13 @@ $router->post('/API/areas/guardar', [AreaController::class,'guardarAPI'] );
 $router->post('/API/areas/modificar', [AreaController::class,'modificarAPI'] );
 $router->post('/API/areas/eliminar', [AreaController::class,'eliminarAPI'] );
 $router->get('/API/areas/buscar', [AreaController::class,'buscarAPI'] );
+
+$router->get('/', [AppController::class,'index']);
+$router->get('/empleados', [EmpleadoController::class,'index'] );
+$router->post('/API/empleados/guardar', [EmpleadoController::class,'guardarAPI'] );
+$router->post('/API/empleados/modificar', [EmpleadoController::class,'modificarAPI'] );
+$router->post('/API/empleados/eliminar', [EmpleadoController::class,'eliminarAPI'] );
+$router->get('/API/empleados/buscar', [EmpleadoController::class,'buscarAPI'] );
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
