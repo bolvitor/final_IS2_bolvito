@@ -7,7 +7,7 @@ use Controllers\PuestoController;
 use Controllers\AreaController;
 use Controllers\AsignacionController;
 use Controllers\EmpleadoController;
-use Controllers\AsignacionControllerController;
+
 
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);

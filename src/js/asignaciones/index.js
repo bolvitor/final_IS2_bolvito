@@ -88,7 +88,7 @@ const buscar = async () => {
         // return;
         if(data.length > 0){
             let contador = 1;
-            data.forEach( puesto => {
+            data.forEach( asignacion => {
                 // CREAMOS ELEMENTOS
                 const tr = document.createElement('tr');
                 const td1 = document.createElement('td')
@@ -125,7 +125,7 @@ const buscar = async () => {
                 fragment.appendChild(tr);
 
                 contador++;
-            })
+            });
         }else{
             const tr = document.createElement('tr');
             const td = document.createElement('td')
@@ -258,7 +258,9 @@ const eliminar = async (id) => {
             console.log(error);
         }
     }
-}
+};
+
+
 buscar();
 formulario.addEventListener('submit', guardar )
 btnBuscar.addEventListener('click', buscar)
