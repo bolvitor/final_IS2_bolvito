@@ -1,6 +1,6 @@
 <div class="row mb-3">
   <div class="col text-center">
-    <h1>INGROSOFT</h1>
+    <h1>BIENVENIDO</h1>
   </div>
 </div>
 <div class="row justify-content-center">
