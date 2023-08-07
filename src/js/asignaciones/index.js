@@ -73,10 +73,12 @@ const guardar = async (evento) => {
 }
 
 const buscar = async () => {
-    
+    let asignacion_id = formulario.empleado_id.value;
     let empleado_id = formulario.empleado_id.value;
     let puesto_id = formulario.puesto_id.value;
+    let area_id = formulario.area_id.value;
     
+    const url = `/final_IS2_bolvito/API/asignaciones/buscar?asignacion_id=${asignacion_id}&empleado_id=${empleado_id}&puesto_id=${puesto_id}&area_id=${area_id}`;
     const config = {
         method : 'GET'
     }

@@ -154,22 +154,29 @@ public static function buscarPuesto(){
     }
 
  
-
-
-    public static function buscarAPI()
-    {
-        
-        // $asignaciones = Puesto::all();
+    public static function buscarAPI() {
         $asignacion_id = $_GET['asignacion_id'];
     
-
-        $sql = "SELECT * FROM asignaciones where asignacion_situacion = 1 ";
-       
-        
+        $sql = "SELECT 
+        a.asignacion_id,
+        e.empleado_nombre,
+        p.puesto_descripcion,
+        ar.area_nombre
+    FROM 
+        asignaciones a
+    JOIN 
+        empleados e ON a.empleado_id = e.empleado_id
+    JOIN 
+        puestos p ON a.puesto_id = p.puesto_id
+    JOIN 
+        areas ar ON a.area_id = ar.area_id;"; // Se agrega una condición inicial siempre verdadera
+    
+        if ($asignacion_id != '') {
+            $sql .= " AND a.asignacion_id = '$asignacion_id'";
+        }
+    
         try {
-
             $asignaciones = Asignacion::fetchArray($sql);
-
             echo json_encode($asignaciones);
         } catch (Exception $e) {
             echo json_encode([
@@ -179,4 +186,4 @@ public static function buscarPuesto(){
             ]);
         }
     }
-}
+}    
