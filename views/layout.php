@@ -19,7 +19,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="/final_IS2_bolvito/">
-                <img src="<?= asset('./images/icono.png') ?>" width="35px'" alt="cit">
+                <img src="<?= asset('./images/icono2.jpg') ?>" width="35px'" alt="cit">
                 INGROSOFT S.A.
             </a>
             <div class="collapse navbar-collapse" id="navbarToggler">

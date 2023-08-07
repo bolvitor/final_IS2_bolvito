@@ -1,4 +1,5 @@
-<h1 class="text-center">Formulario de areas</h1>
+<h1 class="text-center display-5"><b>Formulario de áreas</b></h1>
+
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioArea">
         <input type="hidden" name="area_id" id="area_id">
