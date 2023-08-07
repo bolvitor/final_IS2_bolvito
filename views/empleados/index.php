@@ -1,4 +1,4 @@
-<h1 class="text-center">Formulario de empleados</h1>
+<h1 class="text-center">EMPLEADOS</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioEmpleado">
         <input type="hidden" name="empleado_id" id="empleado_id">

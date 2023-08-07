@@ -1,5 +1,5 @@
 
-<h1 class="text-center">Formulario de asignacion_Empleados</h1>
+<h2 class="text-center">ASIGNAR EMPLEADO A UN PUESTO Y AREA</h2>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioAsignaciones">
         <input type="hidden" name="asignacion_id" id="asignacion_id">

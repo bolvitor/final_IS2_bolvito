@@ -1,4 +1,4 @@
-<h1 class="text-center">Formulario de puestos</h1>
+<h1 class="text-center">PUESTOS</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioPuesto">
         <input type="hidden" name="puesto_id" id="puesto_id">
