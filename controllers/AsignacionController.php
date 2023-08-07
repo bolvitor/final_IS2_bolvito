@@ -158,18 +158,14 @@ public static function buscarPuesto(){
 
     public static function buscarAPI()
     {
+        
         // $asignaciones = Puesto::all();
         $asignacion_id = $_GET['asignacion_id'];
-        $empleado_id = $_GET['empleado_id'];
+    
 
         $sql = "SELECT * FROM asignaciones where asignacion_situacion = 1 ";
-        if ($asignacion_id != '') {
-            $asignacion_id = $asignacion_id;
-            $sql .= "asignacion_id like '%$asignacion_id%' ";
-        }
-        if ($empleado_id != '') {
-            $sql .= " and empleado_id = $empleado_id ";
-        }
+       
+        
         try {
 
             $asignaciones = Asignacion::fetchArray($sql);

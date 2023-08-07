@@ -19,7 +19,7 @@ btnCancelar.parentElement.style.display = 'none'
 const guardar = async (evento) => {
 
     evento.preventDefault();
-    console.log(formulario)
+    
     if(!validarFormulario(formulario, ['asignacion_id'])){
         Toast.fire({
             icon: 'info',
@@ -73,10 +73,10 @@ const guardar = async (evento) => {
 }
 
 const buscar = async () => {
-
+    
     let empleado_id = formulario.empleado_id.value;
     let puesto_id = formulario.puesto_id.value;
-    const url = `/final_IS2_bolvito/API/asignaciones/buscar?empleado_id=${empleado_id}&puesto_id=${puesto_id}`;
+    
     const config = {
         method : 'GET'
     }

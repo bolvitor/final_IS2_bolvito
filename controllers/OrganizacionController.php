@@ -15,7 +15,7 @@ class OrganizacionController
     public static function index(Router $router)
     {
         $empleadosPorAreas = static::getEmpleadosPorAreas();
-        var_dump($empleadosPorAreas);
+        ($empleadosPorAreas);
         $router->render('organizacion/index', [
             'empleadosPorAreas' => $empleadosPorAreas
         ]);

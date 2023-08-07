@@ -7,8 +7,7 @@
             <div class="col">
                 <label for="empleado_id">Empleado</label>
                 <!-- Código del formulario -->
-                var_dump($empleados)
-                <select name="empleado_id" id="empleado_id" class="form-control">
+               <select name="empleado_id" id="empleado_id" class="form-control">
                     <option value="">SELECCIONE...</option>
                     <?php foreach ($empleados as $empleado) : ?>
                         <option value="<?= $empleado['empleado_id'] ?>">
