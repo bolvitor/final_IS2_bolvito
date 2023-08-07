@@ -15,13 +15,13 @@ class AsignacionController
         $empleados = static::buscarEmpleado();
         $areas = static::buscarArea();
         $puestos = static::buscarPuesto();
-        
-        $Asignaciones = Asignacion::all();
+        $asignaciones = Asignacion::all();
     
         $router->render('asignaciones/index', [
             'empleados' => $empleados,
             'areas' => $areas,
             'puestos' => $puestos,
+            'asignaciones' => $asignaciones,
         ]);
     }
     
@@ -70,6 +70,8 @@ public static function buscarPuesto(){
 
     public static function guardarAPI()
     {
+        // echo json_encode($_POST);
+        // exit;
         try {
             $asignacion = new Asignacion($_POST);
             $resultado = $asignacion->crear();

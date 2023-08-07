@@ -7,6 +7,8 @@ use Controllers\PuestoController;
 use Controllers\AreaController;
 use Controllers\AsignacionController;
 use Controllers\EmpleadoController;
+use Controllers\OrganizacionController;
+
 
 
 $router = new Router();
@@ -33,12 +35,17 @@ $router->post('/API/empleados/modificar', [EmpleadoController::class,'modificarA
 $router->post('/API/empleados/eliminar', [EmpleadoController::class,'eliminarAPI'] );
 $router->get('/API/empleados/buscar', [EmpleadoController::class,'buscarAPI'] );
 
+
+
 $router->get('/', [AppController::class,'index']);
 $router->get('/asignaciones', [AsignacionController::class,'index'] );
 $router->post('/API/asignaciones/guardar', [AsignacionController::class,'guardarAPI'] );
 $router->post('/API/asignaciones/modificar', [AsignacionController::class,'modificarAPI'] );
 $router->post('/API/asignaciones/eliminar', [AsignacionController::class,'eliminarAPI'] );
 $router->get('/API/asignaciones/buscar', [AsignacionController::class,'buscarAPI'] );
+
+$router->get('/organizacion', [OrganizacionController::class, 'index']);
+
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

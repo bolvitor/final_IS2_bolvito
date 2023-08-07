@@ -35,7 +35,7 @@
         </div>
         <div class="row mb-3">
             <div class="col">
-                <button type="submit" form="formularioAsignaciones" id="btnGuardar" data-saludo="hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
+                <button type="button" id="btnGuardar" class="btn btn-primary w-100">Guardar</button>
             </div>
             <div class="col">
                 <button type="button" id="btnModificar" class="btn btn-warning w-100">Modificar</button>
