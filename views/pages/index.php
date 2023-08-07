@@ -4,9 +4,11 @@
   </div>
 </div>
 <div class="row justify-content-center">
-  <div class="col-lg-4">
 
-    <img src="./images/fondoap.jpg" width="100%" alt="" class="img-fluid">
+  <div class="col-lg-7">
+
+    <img src="./images/fondoap.jpg" width="100%" alt="" >
   </div>
+
 </div>
 <script src="build/js/inicio.js"></script>
