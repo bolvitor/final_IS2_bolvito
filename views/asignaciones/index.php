@@ -51,7 +51,7 @@
 <div class="row justify-content-center" id="divTabla">
     <div class="col-lg-8">
         <h2>Listado de puestos</h2>
-        <table class="table table-bordered table-hover" id="tablaAsignaciones">
+        <table class="table table-bordered table-hover" id="tablaAsignacion">
             <thead class="table-dark">
                 <tr>
                     <th>NO. </th>

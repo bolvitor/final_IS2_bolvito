@@ -155,13 +155,18 @@ public static function buscarPuesto(){
 
  
     public static function buscarAPI() {
-        $asignacion_id = $_GET['asignacion_id'];
+    $empleado_id = $_GET['empleado_id'];
+    $puesto_id = $_GET['puesto_id'];
+    $area_id = $_GET['area_id'];
     
-        $sql = "SELECT 
-        a.asignacion_id,
-        e.empleado_nombre,
-        p.puesto_descripcion,
-        ar.area_nombre
+    $sql = "SELECT 
+        a.asignacion_id, 
+        e.empleado_nombre AS asignaciones_empleado_id,
+        e.empleado_id,
+        p.puesto_descripcion AS asignaciones_puesto_descripcion,
+        p.puesto_id,
+        ar.area_nombre AS asignaciones_area_nombre,
+        ar.area_id
     FROM 
         asignaciones a
     JOIN 
@@ -169,21 +174,39 @@ public static function buscarPuesto(){
     JOIN 
         puestos p ON a.puesto_id = p.puesto_id
     JOIN 
-        areas ar ON a.area_id = ar.area_id;"; // Se agrega una condición inicial siempre verdadera
+        areas ar ON a.area_id = ar.area_id
+    WHERE 
+        a.asignacion_situacion = 1";
     
-        if ($asignacion_id != '') {
-            $sql .= " AND a.asignacion_id = '$asignacion_id'";
-        }
-    
-        try {
-            $asignaciones = Asignacion::fetchArray($sql);
-            echo json_encode($asignaciones);
-        } catch (Exception $e) {
-            echo json_encode([
-                'detalle' => $e->getMessage(),
-                'mensaje' => 'Ocurrió un error',
-                'codigo' => 0
-            ]);
-        }
+    if ($empleado_id != '') {
+        $sql .= " AND e.empleado_id = '$empleado_id'";
     }
+    
+    if ($puesto_id != '') {
+        $sql .= " AND p.puesto_id = '$puesto_id'";
+    }
+    
+    if ($area_id != '') {
+        $sql .= " AND ar.area_id = '$area_id'";
+    }
+    
+    try {
+        $asignaciones = Asignacion::fetchArray($sql);
+        if(empty($asignaciones)){
+            echo json_encode([
+                'mensaje' => 'El empleado no tiene asignaciones.',
+                'codigo' => 0  
+            ]);
+        }else{
+        echo json_encode($asignaciones);
+        }
+    } catch (Exception $e) {
+        echo json_encode([
+            'detalle' => $e->getMessage(),
+            'mensaje' => 'Ocurrió un error',
+            'codigo' => 0
+        ]);
+    }
+}
+
 }    

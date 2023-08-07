@@ -112,6 +112,7 @@ class PuestoController{
         if($puesto_sueldo != '') {
             $sql.= " and puesto_sueldo = $puesto_sueldo ";
         }
+        
         try {
             
             $puestos = Puesto::fetchArray($sql);
