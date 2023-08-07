@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="build/js/app.js"></script>
-    <link rel="shortcut icon" href="<?= asset('images/cit.png') ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= asset('images/icono.png') ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?= asset('build/styles.css') ?>">
     <title>Proyecto final</title>
 </head>
@@ -20,7 +20,7 @@
             </button>
             <a class="navbar-brand" href="/final_IS2_bolvito/">
                 <img src="<?= asset('./images/tienda.png') ?>" width="35px'" alt="cit">
-                Proyecto1
+                INGROSOFT S.A.
             </a>
             <div class="collapse navbar-collapse" id="navbarToggler">
 
@@ -59,12 +59,7 @@
                     </div>
 
                 </ul>
-                <div class="col-lg-1 d-grid mb-lg-0 mb-2">
-                    <!-- Ruta relativa desde el archivo donde se incluye menu.php -->
-                    <a href="/menu/" class="btn btn-danger"><i class="bi bi-arrow-bar-left"></i>MENÚ</a>
-                </div>
-
-
+               
             </div>
         </div>
 
