@@ -2,7 +2,7 @@ import { Dropdown } from "bootstrap";
 import Swal from "sweetalert2";
 import { validarFormulario, Toast, confirmacion} from "../funciones";
 
-const formulario = document.querySelector('form')
+const formulario = document.querySelector('#formularioAsignaciones')
 const tablaAsignaciones = document.getElementById('tablaAsignaciones');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
@@ -15,8 +15,11 @@ btnModificar.parentElement.style.display = 'none'
 btnCancelar.disabled = true
 btnCancelar.parentElement.style.display = 'none'
 
+
 const guardar = async (evento) => {
+
     evento.preventDefault();
+    console.log(formulario)
     if(!validarFormulario(formulario, ['asignacion_id'])){
         Toast.fire({
             icon: 'info',
@@ -262,7 +265,7 @@ const eliminar = async (id) => {
 
 
 buscar();
-formulario.addEventListener('submit', guardar )
+btnGuardar.addEventListener('click', guardar )
 btnBuscar.addEventListener('click', buscar)
 btnCancelar.addEventListener('click', cancelarAccion)
 btnModificar.addEventListener('click', modificar)
